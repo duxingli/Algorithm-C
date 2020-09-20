@@ -57,7 +57,7 @@ void PrintLink(ElemSN *h)
 {
 	ElemSN*p;
 	for(p=h;p;p=p->next){
-		printf("%5d %5d\n",p->data,p->times);
+		printf("元素：%d  出现次数：%d\n",p->data,p->times);
 	}
 }
 int main(void)
@@ -68,3 +68,7 @@ int main(void)
 	PrintLink(head);
 	return 0;
 }
+//元素：3  出现次数：3
+//元素：2  出现次数：2
+//元素：8  出现次数：2
+//元素：6  出现次数：1

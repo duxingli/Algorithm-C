@@ -1,3 +1,5 @@
+//后缀名改为.cpp就不能用了    气死了，，改半天 
+
 #include <stdio.h>
 #include <stdlib.h>
 #define N 6
