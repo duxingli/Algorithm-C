@@ -34,11 +34,14 @@ int Insert_SeqList(SeqList*L,int i, int x)
 		printf("位置错");
 		return 0;
 	}
-	//循环右移（倒着） 插入 
-	for(j=L->last;j>=i-1;j--){ 
-	//只能通过L->last确定位置  最长从 n-1 ~ 0 
-		L->data[j+1] = L->data[j];
-	}
+//循环右移（倒着） 插入 
+//	for(j=L->last;j>=i-1;j--){ 
+//	//只能通过L->last确定位置  最长从 n-1 ~ 0 
+//		L->data[j+1] = L->data[j];
+//	}
+	for(j=L->last+1;j>=i;j--){
+		L->data[j]=L->data[j-1];
+	} 
 	L->data[i-1] = x; 
 	L->last++; 
 	return 1;		
