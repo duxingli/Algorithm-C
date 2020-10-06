@@ -15,8 +15,7 @@ LinkList Create_LinkList2(int flag)
 	LNode*s,*r=NULL;
 	printf("请输入链表的数据：\n");
 	scanf("%d",&x);
-	printf("这个数据没有结点\n"); 
-	while(x!=flag){
+	while(x != flag){
 		s=(LNode*)malloc(sizeof(LNode));
 		s->data=x;
 		if(!L){
@@ -40,11 +39,9 @@ LinkList Create_LinkList2(int flag)
 LNode* get_LinkList1(LinkList L,int i)
 {
 	LNode *p=L;
-	int j=0;
-	while(p->next!=NULL && j<i){
-		//应该是 i 但是在创建链表时 循环外面的scanf("x")是没有结点的 少了一个结点 
-		//所以视觉上是第i+1个结点    
-		//所以第一个数据输完 回车一下 
+	int j=0; //j=1???????
+	while(p->next != NULL && j<i){
+		//应该是 i 但是在创建链表时  少了flag这个一个结点    
 		p=p->next;
 		j++;
 	}
@@ -87,19 +84,19 @@ int main(void)
 	LNode *p;
 	printf("请输入标识符：\n");
 	scanf("%d",&flag);
-//	printf("请输入i：\n");
-//	scanf("%d",&i);
-	printf("请输入x:\n");
-	scanf("%d",&x);
+	printf("请输入i：\n");
+	scanf("%d",&i);
+//	printf("请输入x:\n");
+//	scanf("%d",&x);
 	L=Create_LinkList2(flag);
 	
-//	p = get_LinkList1(L,i);
+	p = get_LinkList1(L,i);
 //	p = get_LinkList2(L,i);
-//	printf("查找到的值为：%d",p->data);
+	printf("查找到的值为：%d",p->data);
 
 //	p = Locate_LinkList1(L,x);
-	p = Locate_LinkList2(L,x);
-	printf("查找到的值为：%d",p->data);
+//	p = Locate_LinkList2(L,x);
+//	printf("查找到的值为：%d",p->data);
 	return 0;
 }
 
@@ -109,9 +106,7 @@ int main(void)
 //请输入i：
 //3
 //请输入链表的数据：
-//1
-//这个数据没有结点
-//2 3 4 5 6 7 8
+//1 2 3 4 5 6
 //查找到的值为：4
 
 
@@ -121,9 +116,9 @@ int main(void)
 //请输入x:
 //3
 //请输入链表的数据：
-//1
-//这个数据没有结点
-//2 3 4 5 6
+//1 2 3 4 5 6
 //查找到的值为：3
+
+
 
 
