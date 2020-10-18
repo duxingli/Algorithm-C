@@ -43,13 +43,13 @@ LinkStack Pop_LinkStack(LinkStack top,int* val)
 	else{
 		*val=top->data;
 		
-//		p=top->next;
-//		free(top);
-//		top=p; 
+		p=top->next;
+		free(top);
+		top=p; 
 
-		p=top;
-		top=top->next;
-		free(p);
+//		p=top;
+//		top=top->next;
+//		free(p);
 		return top;
 	}	
 } 
@@ -102,7 +102,7 @@ int main(void)
 	}
 //	Traverse(top);//5 4 3 2 1 
 	
-//	int x=3;
+//	int x;
 //	if(Pop_LinkStack(top,&x)){
 //		printf("删除成功 您删除的元素是%d",x);
 //	}
@@ -110,12 +110,12 @@ int main(void)
 //		printf("删除失败");
 //	}
 	
-	int y=4;
-	top =  Pop_LinkStack(top,&y);
-	Traverse(top);//4 3 2 1
+//	int y=4;
+//	top =  Pop_LinkStack(top,&y);
+//	Traverse(top);//4 3 2 1
 	
 	
 	//返回栈顶元素 
-	printf("\n%d",Top_LinkStack(top));
+//	printf("\n%d",Top_LinkStack(top));
 	return 0;
 }
